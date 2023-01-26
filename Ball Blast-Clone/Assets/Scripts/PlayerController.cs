@@ -25,17 +25,21 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMove()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-        RotateWheels();        
+
+        //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+        RotateWheels();
+        
+        
     }
 
     
     
     private void RotateWheels()
     {
-        LeftWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -5));
-        RightWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -5));
-        RightWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -5));
-        LeftWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -5));
+        LeftWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
+        RightWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
+        RightWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
+        LeftWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
     }
 }
