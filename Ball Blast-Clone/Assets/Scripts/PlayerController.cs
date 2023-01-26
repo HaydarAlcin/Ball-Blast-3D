@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         PlayerMove();  
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerMove()
     {
 
-        //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+        
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
         RotateWheels();
         
@@ -41,5 +41,13 @@ public class PlayerController : MonoBehaviour
         RightWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
         RightWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
         LeftWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="Platform")
+        {
+            Time.timeScale = 0;
+        }
     }
 }

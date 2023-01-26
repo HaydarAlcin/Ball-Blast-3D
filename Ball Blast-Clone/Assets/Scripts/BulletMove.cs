@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
+    public ParticleSystem Explosion;
+
     //Kayalarda bulunan text deðiþkenini tutmak için oluþturduðumuz geçici deðiþken
     int health;
+    
 
     //Mermi hýzý
     public float bulletSpeed;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -43,6 +42,7 @@ public class BulletMove : MonoBehaviour
         if (other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text=="0")
         {
             Destroy(other.gameObject);
+            Instantiate(Explosion,other.transform.position,Quaternion.identity);
         }
     }
 }

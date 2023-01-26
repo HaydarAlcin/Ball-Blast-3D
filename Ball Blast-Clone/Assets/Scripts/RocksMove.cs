@@ -7,6 +7,10 @@ public class RocksMove : MonoBehaviour
     Rigidbody rb;
     bool oneMore;
     public float speed;
+
+    //Zemine çarptýðý sýrada yukarý doðru uygulanacak olan kuvvet
+    public float planeForce;
+
     void Start()
     {
         oneMore = true;
@@ -21,6 +25,9 @@ public class RocksMove : MonoBehaviour
         {
             if (transform.position.x<0)
             {
+                //Rock oluþtuðunda içerisinde bulunan Can göstergesini oyunda eðik görünmemesi için düzeltiyoruz.
+                gameObject.transform.GetChild(0).transform.rotation= Quaternion.Euler(0,0,0);
+                
                 GetComponent<Rigidbody>().isKinematic = true;
                 transform.Translate(2*Time.deltaTime,0,0);
                 if (transform.position.x>=-2)
@@ -33,6 +40,10 @@ public class RocksMove : MonoBehaviour
             }
             else
             {
+                //Rock oluþtuðunda içerisinde bulunan Can göstergesini oyunda eðik görünmemesi için düzeltiyoruz.
+                gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0,0);
+
+
                 GetComponent<Rigidbody>().isKinematic = true;
                 transform.Translate(-2*Time.deltaTime, 0, 0);
                 if (transform.position.x <= 2)
@@ -43,12 +54,16 @@ public class RocksMove : MonoBehaviour
                     oneMore = false;
                 }
             }
-
-            //Local Eksene göre Kuvvet uyguluyor.
-            //rb.AddRelativeForce(0,speed,0);
-            //oneMore = false;
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="Platform")
+        {
+            rb.AddForce(0, planeForce*Time.deltaTime, 0);
+        }
+    }
+
+
 }
