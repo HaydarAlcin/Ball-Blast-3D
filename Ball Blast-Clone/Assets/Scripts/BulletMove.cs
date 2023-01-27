@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletMove : MonoBehaviour
 {
@@ -30,19 +31,24 @@ public class BulletMove : MonoBehaviour
         if (other.tag=="Rocks")
         {
             Destroy(this.gameObject);
+            
+            //Can azalmasý
+            health = int.Parse(other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text);
+            health -= 1;
+            other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
+
+
+            other.GetComponent<MeshRenderer>().material.color += new Color(-0.05f, 0, 0);
+
+            if (other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text == "0")
+            {
+                Destroy(other.gameObject);
+                Instantiate(Explosion, other.transform.position, Quaternion.identity);
+            }
         }
+
         
 
-
-        //Can azalmasý
-        health = int.Parse(other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text);
-        health -= 1;
-        other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
-
-        if (other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text=="0")
-        {
-            Destroy(other.gameObject);
-            Instantiate(Explosion,other.transform.position,Quaternion.identity);
-        }
+        
     }
 }

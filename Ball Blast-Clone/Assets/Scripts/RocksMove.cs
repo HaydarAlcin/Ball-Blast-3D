@@ -7,14 +7,15 @@ public class RocksMove : MonoBehaviour
     Rigidbody rb;
     bool oneMore;
     public float speed;
-
+    TextMesh txt;
     //Zemine çarptýðý sýrada yukarý doðru uygulanacak olan kuvvet
     public float planeForce;
 
-    void Start()
+    void Awake()
     {
         oneMore = true;
         rb = GetComponent<Rigidbody>();
+        txt = transform.GetChild(0).gameObject.GetComponent<TextMesh>();
     }
 
     
