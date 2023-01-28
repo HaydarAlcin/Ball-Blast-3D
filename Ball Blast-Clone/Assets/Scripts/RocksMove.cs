@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocksMove : MonoBehaviour
 {
+
     Rigidbody rb;
     bool oneMore;
     public float speed;
@@ -16,6 +17,7 @@ public class RocksMove : MonoBehaviour
         oneMore = true;
         rb = GetComponent<Rigidbody>();
         txt = transform.GetChild(0).gameObject.GetComponent<TextMesh>();
+
     }
 
     
@@ -34,6 +36,8 @@ public class RocksMove : MonoBehaviour
                 if (transform.position.x>=-2)
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
+                    
+                    speed = Random.Range(70,100);
                     //Local Eksene göre Kuvvet uyguluyor.
                     rb.AddRelativeForce(0, speed, 0);
                     oneMore = false;
@@ -66,5 +70,5 @@ public class RocksMove : MonoBehaviour
         }
     }
 
-
+    
 }

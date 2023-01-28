@@ -17,7 +17,7 @@ public class RockController : MonoBehaviour
         else
         {
             Instantiate(Rock, transform.position,transform.rotation);
-            time = 6f;
+            time = 10f;
 
             
         }

@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+
 
 public class BulletMove : MonoBehaviour
 {
     public ParticleSystem Explosion;
+    public GameObject miniRock;
 
     //Kayalarda bulunan text deðiþkenini tutmak için oluþturduðumuz geçici deðiþken
     int health;
@@ -38,12 +39,19 @@ public class BulletMove : MonoBehaviour
             other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
 
 
-            other.GetComponent<MeshRenderer>().material.color += new Color(-0.05f, 0, 0);
+            other.GetComponent<MeshRenderer>().material.color += new Color(-0.03f, 0.04f, 0.01f);
 
             if (other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text == "0")
             {
-                Destroy(other.gameObject);
+                
                 Instantiate(Explosion, other.transform.position, Quaternion.identity);
+
+                Destroy(other.gameObject);
+                
+                //Instantiate(miniRock, other.transform.GetChild(1).position, Quaternion.identity);
+                //Instantiate(miniRock, other.transform.GetChild(2).position, Quaternion.identity);
+                
+                
             }
         }
 

@@ -112,4 +112,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 5135771247153986194, guid: e34f7e6d346cb0a408c2c9af91950a96, type: 3}
+  miniRock: {fileID: 8202862949044181639, guid: 6ea1d123a0bdd1b4884796ddc1737834, type: 3}
   bulletSpeed: 8
