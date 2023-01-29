@@ -9,7 +9,8 @@ public class RocksMove : MonoBehaviour
     bool oneMore;
     public float speed;
     TextMesh txt;
-    //Zemine çarptýðý sýrada yukarý doðru uygulanacak olan kuvvet
+    
+    //Zemine çarptýðý sýrada uygulanacak olan kuvvet
     public float planeForce;
 
     void Awake()
@@ -37,7 +38,7 @@ public class RocksMove : MonoBehaviour
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
                     
-                    speed = Random.Range(70,100);
+                    
                     //Local Eksene göre Kuvvet uyguluyor.
                     rb.AddRelativeForce(0, speed, 0);
                     oneMore = false;
@@ -66,7 +67,7 @@ public class RocksMove : MonoBehaviour
     {
         if (collision.gameObject.tag=="Platform")
         {
-            rb.AddForce(0, planeForce*Time.deltaTime, 0);
+            
         }
     }
 
