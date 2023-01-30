@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  planeForce: 500
+  planeForce: 100
 --- !u!135 &2724204678797383094
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000491950684768526}
-  m_Text: 22
+  m_Text: 19
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 0

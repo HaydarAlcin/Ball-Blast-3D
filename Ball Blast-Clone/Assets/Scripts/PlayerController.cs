@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Platform")
+        if (collision.gameObject.tag=="Rocks")
         {
             Time.timeScale = 0;
         }

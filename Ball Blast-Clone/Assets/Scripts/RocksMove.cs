@@ -65,9 +65,16 @@ public class RocksMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Platform")
+        if (collision.gameObject.tag=="Column")
         {
-            
+            if (rb.velocity.x<0)
+            {
+                rb.AddForce(-planeForce * Time.deltaTime, 0, 0);
+            }
+            else if(rb.velocity.x > 0)
+            {
+                rb.AddForce(planeForce * Time.deltaTime, 0, 0);
+            }
         }
     }
 

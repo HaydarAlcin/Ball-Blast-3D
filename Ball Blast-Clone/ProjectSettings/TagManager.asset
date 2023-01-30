@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rocks
   - Platform
+  - Column
   layers:
   - Default
   - TransparentFX

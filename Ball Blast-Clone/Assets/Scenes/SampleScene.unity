@@ -547,10 +547,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.29151958
-  m_Height: 1.6437256
+  m_Radius: 0.2915196
+  m_Height: 1.3793999
   m_Direction: 0
-  m_Center: {x: 0.0055983067, y: -0.15, z: 0}
+  m_Center: {x: 0.0022087991, y: -0.15, z: 0}
 --- !u!65 &414507982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -562,8 +562,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.60702634, y: 0.9765067, z: 1}
-  m_Center: {x: 0.010915875, y: 0.6089021, z: 0}
+  m_Size: {x: 0.41277325, y: 0.9765067, z: 0.51369154}
+  m_Center: {x: 0.012748465, y: 0.6089021, z: 0.022760611}
 --- !u!4 &425573932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310, type: 3}
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 698831395}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Column
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2094,7 +2094,7 @@ GameObject:
   - component: {fileID: 1307747510}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Column
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3285,7 +3285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176177167120060901, guid: 75edf1399aca6bd4b85b48a94ff7c1b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.238
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7176177167120060901, guid: 75edf1399aca6bd4b85b48a94ff7c1b1, type: 3}
       propertyPath: m_LocalPosition.z

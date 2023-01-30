@@ -416,7 +416,7 @@ Transform:
   m_GameObject: {fileID: 6828908733264898354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.107, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7336191586421161053}
@@ -441,6 +441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightWhl: {fileID: 0}
   LeftWhl: {fileID: 0}
+  RightWhl2: {fileID: 0}
+  LeftWhl2: {fileID: 0}
   speed: 8
 --- !u!1 &7963687736603829991
 GameObject:
