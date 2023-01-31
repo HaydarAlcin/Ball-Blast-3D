@@ -7,6 +7,8 @@ TagManager:
   - Rocks
   - Platform
   - Column
+  - Gems
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Rocks
-  - 
+  - Gems
   - 
   - 
   - 

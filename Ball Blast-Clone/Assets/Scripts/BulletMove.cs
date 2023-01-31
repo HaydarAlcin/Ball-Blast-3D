@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +5,6 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public ParticleSystem Explosion;
-    public GameObject miniRock;
-
-    //Kayalarda bulunan text deðiþkenini tutmak için oluþturduðumuz geçici deðiþken
-    int health;
-    
 
     //Mermi hýzý
     public float bulletSpeed;
@@ -34,25 +27,14 @@ public class BulletMove : MonoBehaviour
             Destroy(this.gameObject);
             
             //Can azalmasý
-            health = int.Parse(other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text);
-            health -= 1;
-            other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
+            //health = int.Parse(other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text);
+            //health -= 1;
+            //other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
 
 
             other.GetComponent<MeshRenderer>().material.color += new Color(-0.03f, 0.04f, 0.01f);
 
-            if (other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text == "0")
-            {
-                
-                Instantiate(Explosion, other.transform.position, Quaternion.identity);
-
-                Destroy(other.gameObject);
-                
-                //Instantiate(miniRock, other.transform.GetChild(1).position, Quaternion.identity);
-                //Instantiate(miniRock, other.transform.GetChild(2).position, Quaternion.identity);
-                
-                
-            }
+          
         }
 
         
