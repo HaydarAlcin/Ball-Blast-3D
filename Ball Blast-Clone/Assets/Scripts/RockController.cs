@@ -7,10 +7,15 @@ public class RockController : MonoBehaviour
     public GameObject Rock;
     public float time;
     public PlayerManager pb;
-    
+    public RocksMove rm;
+
+    public bool oneMore;
     private void Start()
     {
+
+        oneMore = true;
         pb = FindObjectOfType<PlayerManager>();
+       
     }
 
     void Update()
@@ -22,12 +27,14 @@ public class RockController : MonoBehaviour
         else
         {
           
-            if (pb.Score >= 10)
+            if (pb.Score >= 10 && oneMore)
             {
                 Instantiate(Rock, transform.position, transform.rotation);
-                Rock.transform.GetChild(0).GetComponent<TextMesh>().text = Random.Range(40, 65).ToString();
                 Rock.transform.GetChild(0).GetComponent<TextMesh>().text = "?";
                 time = 7f;
+                Rock.GetComponent<RocksMove>().health = 60;
+                oneMore = false;
+
             }
             else
             {

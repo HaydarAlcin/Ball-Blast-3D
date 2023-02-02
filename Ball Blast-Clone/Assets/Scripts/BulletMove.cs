@@ -32,7 +32,7 @@ public class BulletMove : MonoBehaviour
             //other.gameObject.transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
 
 
-            other.GetComponent<MeshRenderer>().material.color += new Color(-0.03f, 0.04f, 0.01f);
+            other.GetComponent<MeshRenderer>().material.color += new Color(-0.02f, 0.03f, 0.005f);
 
           
         }

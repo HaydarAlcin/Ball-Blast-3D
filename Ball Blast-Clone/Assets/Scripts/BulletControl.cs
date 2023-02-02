@@ -17,7 +17,7 @@ public class BulletControl : MonoBehaviour
         else if(time<=0)
         {
             Instantiate(Bullet, transform.position, Quaternion.identity);
-            time = 0.1f;
+            time = 0.05f;
         }
     }
 }

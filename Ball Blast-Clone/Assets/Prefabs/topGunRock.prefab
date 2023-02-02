@@ -105,7 +105,7 @@ MonoBehaviour:
   Explosion: {fileID: 5135771247153986194, guid: e34f7e6d346cb0a408c2c9af91950a96, type: 3}
   speed: 40
   planeForce: 70
-  health: 0
+  health: 60
 --- !u!135 &2724204678797383094
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000491950684768526}
-  m_Text: 24
+  m_Text: 17
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 0

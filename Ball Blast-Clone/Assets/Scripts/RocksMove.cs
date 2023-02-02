@@ -17,6 +17,7 @@ public class RocksMove : MonoBehaviour
     
     //Zemine çarptýðý sýrada uygulanacak olan kuvvet
     public float planeForce;
+
     public float health;
     void Awake()
     {
@@ -96,24 +97,53 @@ public class RocksMove : MonoBehaviour
         if (other.tag == "Bullet")
         {
             
-            health = int.Parse(transform.GetChild(0).GetComponent<TextMesh>().text);
-            health -= 1;
-            transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
 
-            if (health == 0)
+            if (transform.GetChild(0).GetComponent<TextMesh>().text=="?")
             {
-                Destroy(this.gameObject);
+                health -= 1;
 
-                Instantiate(Explosion, transform.position, Quaternion.identity);
-
-                for (int i = 0; i < 6; i++)
+                if (health == 0)
                 {
-                    Instantiate(Gems, transform.position, Quaternion.identity);
-                    Gems.GetComponent<Rigidbody>().AddForce(Random.Range(-100f, 100f), 0, 0);
+                    Destroy(this.gameObject);
+
+                    Instantiate(Explosion, transform.position, Quaternion.identity);
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        Instantiate(Gems, transform.position, Quaternion.identity);
+                        Gems.GetComponent<Rigidbody>().AddForce(Random.Range(-100f, 100f), 0, 0);
 
 
+                    }
                 }
             }
+
+            else
+            {
+                health = int.Parse(transform.GetChild(0).GetComponent<TextMesh>().text);
+                health -= 1;
+                transform.GetChild(0).GetComponent<TextMesh>().text = health.ToString();
+
+                if (health == 0)
+                {
+                    Destroy(this.gameObject);
+
+                    Instantiate(Explosion, transform.position, Quaternion.identity);
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        Instantiate(Gems, transform.position, Quaternion.identity);
+                        Gems.GetComponent<Rigidbody>().AddForce(Random.Range(-100f, 100f), 0, 0);
+
+
+                    }
+                }
+            }
+
+
+            
+
+           
         }
     }
 
