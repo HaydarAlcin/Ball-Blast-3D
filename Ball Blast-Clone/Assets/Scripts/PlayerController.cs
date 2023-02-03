@@ -39,8 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         LeftWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
         RightWhl.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
-        RightWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
-        LeftWhl2.Rotate(new Vector3(0, 0, Input.GetAxis("Horizontal") * -3));
+        
     }
 
     private void OnCollisionEnter(Collision collision)

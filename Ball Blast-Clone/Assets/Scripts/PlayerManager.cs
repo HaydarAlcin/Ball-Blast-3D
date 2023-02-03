@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    //Þuanlýk sadece arka Planda oyuncunun skorunu deðiþtiren script
+
     public float Score;
-    private void Start()
+    private void Awake()
     {
         Score = 0;
     }
@@ -15,6 +17,7 @@ public class PlayerManager : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Score++;
+
         }
     }
 }

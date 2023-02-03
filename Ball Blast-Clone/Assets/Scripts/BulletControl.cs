@@ -8,6 +8,8 @@ public class BulletControl : MonoBehaviour
     public GameObject Bullet;
 
     public float time;
+
+    
     void Update()
     {
         if (time>0)
@@ -17,6 +19,7 @@ public class BulletControl : MonoBehaviour
         else if(time<=0)
         {
             Instantiate(Bullet, transform.position, Quaternion.identity);
+            
             time = 0.05f;
         }
     }

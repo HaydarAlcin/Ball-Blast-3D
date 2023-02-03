@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class RocksMove : MonoBehaviour
 {
+    //Kayalarýmýzýn hem hareketlerinin hem de oyun içi durumlarýnýn kontrol edildiði script
+
+    //Kayalar yok olduktan sonra skorun artmasý için oluþan elmaslar
     public GameObject Gems;
+
+    //Extra topun oluþmasý için oyuncunun yakalamasý gereken özellik (Sadece ? kayalardan çýkar)
+    public GameObject lvlUp;
+
+    //Kayalar patladýktan sonra oluþan efekt
     public ParticleSystem Explosion;
 
     //Text Nesnesinin Rotate deðerini tutan deðþken
@@ -107,6 +115,7 @@ public class RocksMove : MonoBehaviour
                     Destroy(this.gameObject);
 
                     Instantiate(Explosion, transform.position, Quaternion.identity);
+                    Instantiate(lvlUp,transform.position,Quaternion.identity);
 
                     for (int i = 0; i < 6; i++)
                     {
