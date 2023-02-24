@@ -103,7 +103,7 @@ MonoBehaviour:
   lvlUp: {fileID: 4598977000521826706, guid: e0372b6415852734688bb73f8cf03748, type: 3}
   Explosion: {fileID: 5135771247153986194, guid: e34f7e6d346cb0a408c2c9af91950a96, type: 3}
   speed: 40
-  planeForce: 80
+  planeForce: 10
   health: 50
 --- !u!54 &4395207710385933418
 Rigidbody:
@@ -113,14 +113,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6084858259972594029}
   serializedVersion: 2
-  m_Mass: 0.11911842
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!135 &565798688075890753
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000491950684768526}
-  m_Text: 17
+  m_Text: 11
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 0

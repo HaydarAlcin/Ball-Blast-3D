@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public float Score;
     private void Awake()
     {
+        Time.timeScale = 1;
         Score = 0;
     }
     private void OnCollisionEnter(Collision collision)

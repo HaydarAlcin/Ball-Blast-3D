@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject ScoreTxt;
     public PlayerManager pm;
+
+    public bool checkRock;
     
     void Start()
     {
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Rocks"), LayerMask.NameToLayer("Rocks"), true);
 
         pm = FindObjectOfType<PlayerManager>();
+
+        checkRock = true;
     }
 
     private void Update()
@@ -24,6 +29,11 @@ public class GameManager : MonoBehaviour
 
         ScoreTxt.GetComponent<Text>().text = pm.Score.ToString();
       
+    }
+
+    public void TryAgainBtn()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

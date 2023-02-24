@@ -8,9 +8,8 @@ public class PlayerController : MonoBehaviour
     
     public Transform RightWhl;
     public Transform LeftWhl;
-    public Transform RightWhl2;
-    public Transform LeftWhl2;
 
+    public GameObject TryAgainPnl;
     public float speed;
     void Awake()
     {
@@ -47,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag=="Rocks")
         {
             Time.timeScale = 0;
+            TryAgainPnl.SetActive(true);
         }
     }
 }

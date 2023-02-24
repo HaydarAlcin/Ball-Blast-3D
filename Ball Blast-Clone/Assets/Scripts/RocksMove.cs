@@ -52,7 +52,7 @@ public class RocksMove : MonoBehaviour
                 //gameObject.transform.GetChild(0).transform.rotation= Quaternion.Euler(0,0,0);
                 
                 GetComponent<Rigidbody>().isKinematic = true;
-                transform.Translate(2*Time.deltaTime,0,0);
+                transform.Translate(4*Time.deltaTime,0,0);
                 
                 if (transform.position.x>=-2)
                 {
@@ -71,7 +71,7 @@ public class RocksMove : MonoBehaviour
 
 
                 GetComponent<Rigidbody>().isKinematic = true;
-                transform.Translate(-2*Time.deltaTime, 0, 0);
+                transform.Translate(-4*Time.deltaTime, 0, 0);
                 
                 if (transform.position.x <= 2)
                 {
@@ -88,13 +88,15 @@ public class RocksMove : MonoBehaviour
     {
         if (collision.gameObject.tag=="Column")
         {
-            if (rb.velocity.x<0)
+            if (transform.position.x>0)
             {
-                rb.AddForce(-planeForce * Time.deltaTime, 0, 0);
+                rb.AddForce(-planeForce, 0, 0);
+                
             }
-            else if(rb.velocity.x > 0)
+            else if(transform.position.x < 0)
             {
-                rb.AddForce(planeForce * Time.deltaTime, 0, 0);
+                rb.AddForce(planeForce, 0, 0);
+                
             }
         }
 
